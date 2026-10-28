@@ -1,0 +1,16 @@
+resources:
+  group: myResourceGroup
+  name: myAppService
+  location: eastus
+  appServicePlan: myAppServicePlan
+  runtime: java
+  javaVersion: '11'
+  webContainer: 'Java SE'
+  deployment:
+    source: 
+      type: git
+      url: https://github.com/username/repo.git
+      branch: main
+  appSettings:
+    - name: "JAVA_OPTS"
+      value: "-Dserver.port=8080"
